@@ -1,0 +1,182 @@
+body {
+    background-color: #414951;
+}
+
+.documents {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.document {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0;
+}
+
+h1.document_header {
+    /* Consistent with Material Design */
+    font-family: 'Roboto', sans-serif;
+    /* Slightly heavier than the h2 for emphasis */
+    font-weight: 400;
+    /* Keeping text color consistent */
+    color: #212121;
+    /* A slightly deeper shadow for more prominence */
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+    /* Larger padding for more space */
+    padding: 20px 30px;
+    /* Larger margin for distinct separation */
+    margin: 0;
+    /* Thicker accent bar for more emphasis */
+    border-left: 7px solid #76d4d6;
+    /* Consistent background */
+    background-color: #FFFFFF;
+    /* Slightly larger box shadow for more depth */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    /* Larger font size for primary heading */
+    font-size: 2.5em;
+}
+
+.workspaces {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0;
+}
+
+.workspace {
+    align-self: stretch;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0;
+}
+
+.workspace:not(:last-child)::after {
+    /* No need for actual text */
+    content: "";
+    /* Ensure it's treated as a block-level element */
+    display: block;
+    /* Span the full width of the container */
+    width: 100%;
+    /* Adjust spacing around the divider as needed */
+    margin: 20px 0;
+    /* Thickness of the dividing line */
+    height: 2px;
+    /* Color of the dividing line */
+    background-color: #76d4d6;
+}
+
+h2.workspace_header {
+    /* Material Design typically uses Roboto */
+    font-family: 'Roboto', sans-serif;
+    /* Lighter font-weight, typical in Material Design */
+    font-weight: 300;
+    /* Dark grey text on light background */
+    color: #212121;
+    /* Subtle shadow for depth */
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12);
+    /* Padding for better spacing */
+    padding: 10px 20px;
+    /* Ensure proper spacing around the heading */
+    margin: 20px 0;
+    /* A colored accent bar, customize the color */
+    border-left: 5px solid #76d4d6;
+    /* Light background, could be adjusted */
+    background-color: #FFFFFF;
+    /* Soft box shadow for depth */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bubble_rows {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.bubble_columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.bubble {
+    /* Flexbox styling */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0;
+
+    /* Bubble styling */
+    /* White background */
+    background-color: #ffeea6;
+    /* Rounded corners */
+    border-radius: 8px;
+    /* Slight shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1),
+        0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Padding inside the box */
+    padding: 16px;
+
+    /* TODO: Fix the width issues. probably with JS */
+    min-width: 200px;
+
+    /* Interactivity */
+    cursor: grab;
+}
+
+.dragging_bubble {
+    opacity: 0.85;
+    cursor: grabbing;
+}
+
+.bubble>.inner_bubble_rows>.inner_bubble_columns>.bubble {
+    /* TODO: Fix the width issues. probably with JS */
+    background-color: #e1a6f2;
+    min-width: 160px;
+    max-width: 600px;
+}
+
+.bubble>.inner_bubble_rows>.inner_bubble_columns>.bubble>.inner_bubble_rows>.inner_bubble_columns>.bubble {
+    /* TODO: Fix the width issues. probably with JS */
+    min-width: 120px;
+    background-color: #6ab0f3;
+}
+
+.bubble>.inner_bubble_rows>.inner_bubble_columns>.bubble>.inner_bubble_rows>.inner_bubble_columns>.bubble>.inner_bubble_rows>.inner_bubble_columns>.bubble {
+    /* TODO: Fix the width issues. probably with JS */
+    min-width: 80px;
+    background-color: #fca369;
+}
+
+.inner_bubble_rows {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.inner_bubble_columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.editing {
+    cursor: text;
+}
